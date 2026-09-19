@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>استمارة تسجيل الطلاب</title>
+
+    <style>
+    .guadian_section input{
+        border-radius: 18px 5px;
+        margin-right: 7PX;
+        width: 130px;
+        height: 20px;
+        background-color: rgb(123, 168, 135);
+        margin-top: 2px;
+        }
+    
+
+.guadian_section label:nth-of-type(3) {
+        margin-right: 37px;
+}
+
+/* student section */
+
+.student_section input {
+    border-radius: 18px 5px;
+        margin-right: 7PX;
+        width: 130px;
+        height: 20px;
+        background-color: rgb(123, 168, 135);
+        margin-top: 2px;
+}
+
+.guadian_section label:nth-of-type(2) {
+    margin-right: 30px;
+}
+
+.student_section label:nth-of-type(2) {
+    margin-right: 21px;
+}
+
+.student_section label:nth-of-type(3) {
+    margin-right: 20px;
+}
+
+.student_section label:nth-of-type(4) {
+    margin-right: 16px;
+}
+.save {
+    color: rgb(13, 255, 215);
+    border-color: rgb(0, 218, 234);
+}
+.save:hover {
+    color: rgb(3, 248, 31);
+    border-color: brown;
+}
+
+
+
+    </style>
+</head>
+
+<body style="background-color: rgb(76, 101, 97);">
+
+    <form>
+        <fieldset>
+
+            <legend>استمارة تسجيل الطلاب</legend>
+
+            <div id="student_section" >
+
+                <fieldset style="width: 400px; height: 150px;">
+                    <legend>الطالب/ة</legend>
+
+                    <div class="student_section" >
+
+                        <div class="student_section" style="display: inline-block; ">
+                            <label>اسم الأول</label>
+                            <input type="text"><br>
+
+                            <label>الثاني</label>
+                            <input type="text"><br>
+
+                            <label>الثالث</label>
+                            <input type="text"><br>
+
+                            <label>الهاتف</label>
+                            <input type="tel">
+                        </div>
+
+                        <div class="sex" style="float: left;">
+                            <label>الجنس</label><br>
+
+                            <input type="radio" name="gender">
+                            <label>ذكر</label><br>
+
+                            <input type="radio" name="gender">
+                            <label>انثي</label>
+                        </div>
+
+                    </div>
+
+                </fieldset>
+
+            </div>
+
+
+            <div class="guadian_section" id="guadian_section">
+
+                <fieldset style="width: 400px; height: 150px;">
+
+                    <legend>ولي الأمر</legend>
+
+                    <label>اسم ولي الأمر</label>
+                    <input type="text" placeholder="ثلاثة اسامي"><br>
+
+                    <label>اسم الأم</label>
+                    <input type="text"><br>
+
+                    <label>الهاتف</label>
+                    <input type="tel">
+
+                </fieldset>
+
+            </div>
+
+        </fieldset>
+        <input type="submit" value="حفط" class="save"
+style="float: left; width: 30px; height: 30px; border-radius: 50%; ; background-color: rgb(76, 101, 97); margin-top: 10px;">
+    </form>
+
+
+    <div style="float: left;">
+        <!-- Previous -->
+        <button
+            type="button"
+            id="previous"
+            style="border: none; background-color: rgb(76, 101, 97); font-size: 40px; color: aqua;"
+            onclick="showStudentsection()">
+            &lsaquo;
+        </button>
+
+        <!-- Next -->
+        <button
+            type="button"
+            id="next"
+            style="border: none; background-color: rgb(76, 101, 97);; font-size: 40px; color: aqua;"
+            onclick="showGuardianSection()">
+            &rsaquo;
+        </button>
+
+    </div>
+
+
+    <script>
+    // load script
+    window.onload = function () {
+        document.getElementById("guadian_section").style.display = "none";
+        document.getElementById("previous").style.display = "none";
+        document.getElementById("student_section").style.display = "inline-block";
+        document.getElementById("next").style.display = "inline-block";
+    };
+
+
+
+
+
+
+
+
+        function showGuardianSection() {
+
+            // Hide next first
+            document.getElementById("next").style.display = "none";
+
+            setTimeout(function () {
+
+                // Hide student
+                document.getElementById("student_section").style.display = "none";
+
+                // Show guardian
+                document.getElementById("guadian_section").style.display = "inline-block";
+
+                // Show previous
+                document.getElementById("previous").style.display = "inline-block";
+
+            }, 300);
+        }
+
+
+        function showStudentsection() {
+
+            // Hide previous first
+            document.getElementById("previous").style.display = "none";
+
+            setTimeout(function () {
+
+                // Hide guardian
+                document.getElementById("guadian_section").style.display = "none";
+
+                // Show student
+                document.getElementById("student_section").style.display = "inline-block";
+
+                // Show next
+                document.getElementById("next").style.display = "inline-block";
+
+            }, 300);
+        }
+
+    </script>
+
+</body>
+
+</html>
